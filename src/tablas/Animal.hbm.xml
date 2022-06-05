@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-feb-2022 13:11:52 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="tablas.Animal" table="animal" catalog="zoo">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="especie" class="tablas.Especie" fetch="select">
+            <column name="idEspecie" not-null="true" />
+        </many-to-one>
+        <many-to-one name="zona" class="tablas.Zona" fetch="select">
+            <column name="idZona" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="fechaNac" type="date">
+            <column name="fechaNac" length="10" />
+        </property>
+        <set name="animaltratamientos" table="animaltratamiento" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="idAnimal" not-null="true" />
+            </key>
+            <one-to-many class="tablas.Animaltratamiento" />
+        </set>
+        <set name="consumes" table="consume" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="idAnimal" not-null="true" />
+            </key>
+            <one-to-many class="tablas.Consume" />
+        </set>
+    </class>
+</hibernate-mapping>
