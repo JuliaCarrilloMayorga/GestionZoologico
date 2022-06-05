@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/zoo</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping resource="tablas/Animaltratamiento.hbm.xml" />
+        <mapping resource="tablas/Tratamiento.hbm.xml" />
+        <mapping resource="tablas/Alimento.hbm.xml" />
+        <mapping resource="tablas/Animal.hbm.xml" />
+        <mapping resource="tablas/Entrada.hbm.xml" />
+        <mapping resource="tablas/Nomina.hbm.xml" />
+        <mapping resource="tablas/Empleado.hbm.xml" />
+        <mapping resource="tablas/Especie.hbm.xml" />
+        <mapping resource="tablas/Evento.hbm.xml" />
+        <mapping resource="tablas/Consume.hbm.xml" />
+        <mapping resource="tablas/Zona.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

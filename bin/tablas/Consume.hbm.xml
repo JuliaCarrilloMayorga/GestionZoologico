@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-feb-2022 13:11:52 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="tablas.Consume" table="consume" catalog="zoo">
+        <composite-id name="id" class="tablas.ConsumeId">
+            <key-property name="idAnimal" type="int">
+                <column name="idAnimal" />
+            </key-property>
+            <key-property name="idAlimento" type="int">
+                <column name="idAlimento" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="animal" class="tablas.Animal" update="false" insert="false" fetch="select">
+            <column name="idAnimal" not-null="true" />
+        </many-to-one>
+        <many-to-one name="alimento" class="tablas.Alimento" update="false" insert="false" fetch="select">
+            <column name="idAlimento" not-null="true" />
+        </many-to-one>
+        <property name="cantidadDia" type="int">
+            <column name="cantidadDia" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
