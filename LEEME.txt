@@ -1,0 +1,6 @@
+--- GESTION DE ZOO ---
+---Julia Carrillo Mayorga---
+
+-> Asegure que la contraseña para mysql de su ordenador coincide con la marcada en los archivos CFG.INI e hibernate.cfg.xml, ubicados en la raíz de src.
+-> Utilice el archivo datos.sql para generar la base de datos SQL necesaria para el funcionamiento de la aplicación.
+-> Para iniciar la aplicación ejecute la clase VentanaInicial.java del paquete interfaz, en src.
